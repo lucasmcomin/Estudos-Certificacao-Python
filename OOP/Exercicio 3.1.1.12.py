@@ -1,4 +1,4 @@
-class RocketNotReadyError(Exception):
+"""class RocketNotReadyError(Exception):
     pass
 
 
@@ -43,4 +43,20 @@ for check in check_list:
     try:
         check()
     except RocketNotReadyError as f:
-        print('RocketNotReady exception: "{}", caused by "{}"'.format(f, f.__cause__))
+        print('RocketNotReady exception: "{}", caused by "{}"'.format(f, f.__cause__))"""
+
+
+
+class OwnDict(dict):
+    def __setitem__(self, key, value):
+        return super().__setitem__(key, value)
+    
+    def update(self, *args, **kwargs):
+        for _key, _val in dict(*args, **kwargs):
+            self.__setitem__(_key, _val)
+
+    
+own_dict = OwnDict()
+own_dict[4] = 1
+own_dict[2] = 0.5
+print(own_dict)
