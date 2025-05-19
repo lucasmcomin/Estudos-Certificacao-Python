@@ -5,11 +5,8 @@ import time
 
 
 def start(event):
-
-    
     timer_start()
     janela_principal.unbind("<Button-1>")
-    print("to aqui")
 
 
 def timer_start():
