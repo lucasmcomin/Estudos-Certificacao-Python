@@ -31,6 +31,7 @@ from tkinter import messagebox
 import random
 import time
 
+
 strokes = ["", "", "", "", "", "", "", "", ""]
 
 
@@ -40,7 +41,6 @@ def clear_game():
         if i != 4:
             strokes[i] = ""
     
-
     #clear all the buttons labels except the central button
     for button in buttons:
         if button.winfo_name() != "!button5":
@@ -49,7 +49,6 @@ def clear_game():
 
             button["state"] = NORMAL
         
-
 def record_position(button, signal):
     
     #add a signal "X" or "O" in a strokes position based in button variable name that was clicked
@@ -82,6 +81,8 @@ def record_position(button, signal):
         case "!button9":
             strokes[8] = signal
 
+
+
 def place(widget, signal, color):
     #add a label into a widget
     label = Label(widget, text=signal, font=("Arial, 65"), fg=color, relief="flat")
@@ -107,8 +108,7 @@ def random_play():
 def win(signal):
 
     #verify all the possibilits to win the game acessing de strokes list 
-
-    
+        
     if strokes[0] == signal and strokes[1] == signal and strokes[2] == signal: #row 1
         return True
     elif strokes[0] == signal and strokes[4] == signal and strokes[8] == signal: # transversal starting from the row1, column 1
@@ -126,11 +126,10 @@ def win(signal):
     elif strokes[2] == signal and strokes[5] == signal and strokes[8] == signal: #column 3
         return True
 
-
     return False
 
 
-#event for every button
+#click event for every button
 def click(widget):
     
     #disable clicked button
@@ -184,7 +183,6 @@ def main():
     root = Tk()
     root.title("Jogo da Velha")
     root.geometry("445x405")
-
 
     #add buttons that will compose the position options
     button1 = Button(root, width=15, height=7, command=lambda: click(button1))
