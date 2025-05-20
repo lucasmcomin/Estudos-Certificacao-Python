@@ -71,6 +71,7 @@ def insert_display(widget):
     expression += widget["text"]
     display["text"] = expression
 
+
 #clean
 def clear_display():
     global expression
@@ -152,9 +153,6 @@ button_pos_neg.grid(row=4, column=3)
 
 button_divided = tk.Button(calculadora, text="/", width=1, command = lambda: insert_display(button_divided))
 button_divided.grid(row=4, column=4)
-
-
-
 
 
 calculadora.mainloop()
