@@ -48,6 +48,7 @@ def clear_game():
                 button.winfo_children()[0].destroy()
 
             button["state"] = NORMAL
+            
         
 def record_position(button, signal):
     
